@@ -52,10 +52,10 @@ function App() {
     borderRadius: '20px',
     margin: 'auto',
     marginTop: '35px',
-    background: 'rgb(183,255,252)',
+    marginBottom: '40px',
     padding: '25px',
     boxShadow: '0px 3px 10px',
-
+    border: '1px solid'
   }
 
   return (
