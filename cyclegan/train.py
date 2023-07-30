@@ -22,8 +22,8 @@ def train(gen_G, gen_F, dX, dY, dataloader, val_dataloader, n_epochs, id_loss, c
             optimizer_G.zero_grad()
             
             # Identity Loss
-            id_loss_G = id_loss(gen_G(photo), photo)
-            id_loss_F = id_loss(gen_F(monet), monet)
+            id_loss_G = id_loss(gen_G(monet), monet)
+            id_loss_F = id_loss(gen_F(photo), photo)
             id_loss_avg = (id_loss_G + id_loss_F)/2
             
             # GAN Loss

@@ -47,18 +47,34 @@ function App() {
     }
   }
 
+  const paneStyles = {
+    width: '90vw',
+    borderRadius: '20px',
+    margin: 'auto',
+    marginTop: '35px',
+    background: 'rgb(183,255,252)',
+    padding: '25px',
+    boxShadow: '0px 3px 10px',
+
+  }
+
   return (
     <div className="App">
-      <h1>Monet Painting Generator Using CycleGAN!</h1>
-      <h3>Submit your image:</h3>
-      <div>
-        <input type="file" onChange={onFileChange} />
-        <button onClick={onFileUpload}>
-          Generate!
-        </button>
+      <div style={paneStyles}>
+        <h1>Monet Painting Generator Using CycleGAN!</h1>
+        <p>Created by Harry Gao</p>
+        <h3>Submit your image:</h3>
+        <div>
+          <input type="file" onChange={onFileChange} />
+          <button onClick={onFileUpload}>
+            Generate!
+          </button>
+        </div>
       </div>
-      <ShowImage style={{ maxWidth: '40%' }} image={file}/>
-      <img style={{ maxWidth: '40%' }} src={painting}/>
+      <div style={{marginTop: '20px'}}>
+        <ShowImage style={{ maxWidth: '40%', margin: '25px', boxShadow: '0px 5px 10px'}} image={file}/>
+        <img style={{ maxWidth: '40%', margin: '25px', boxShadow: '0px 5px 10px'}} src={painting}/>
+      </div>
     </div>
   );
 }
