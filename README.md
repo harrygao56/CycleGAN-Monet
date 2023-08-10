@@ -12,6 +12,11 @@ For the web application, React.js was used for the frontend and a Flask API was 
 
 ## CycleGAN Architecture and Training Details
 
-The CycleGAN model was implemented using Python and Pytroch, and training was done in Google Colab. The model was trained on 600 photos and 250 Monet paintings. The parameters used for training can all be found in the Jupyter Notebook.
+The CycleGAN model was implemented using Python and Pytorch, and training was done in Google Colab. The model was trained on 600 photos and 250 Monet paintings. The parameters used for training can all be found in the Jupyter Notebook.
 
-## Key Takeaways and Reflection
+## Takeaways and What I Learned
+
+- PyTorch Transforms: for CV models that have a set input size, you can use transforms to resize data
+- Major error I made: I only notices this as I was going through my code, but I did the identity loss totally wrong. Rather than id_loss(gen(monet), monet), I did id_loss(gen(photo), photo) which LITERALLY constrains the output to the input. Somehow the results were still decent I have no idea how.
+- Before an inputted image is fed through the model, it might need to be unsqueezed to add the extra batch dimension
+- Deploying a model to a web app isn't that hard. Just create a Flask API.
