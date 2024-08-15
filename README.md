@@ -19,4 +19,3 @@ The CycleGAN model was implemented using Python and Pytorch, and training was do
 - PyTorch Transforms: for CV models that have a set input size, you can use transforms to resize data
 - Major error I made: I only notices this as I was going through my code, but I did the identity loss totally wrong. Rather than id_loss(gen(monet), monet), I did id_loss(gen(photo), photo) which LITERALLY constrains the output to the input. Somehow the results were still decent I have no idea how.
 - Before an inputted image is fed through the model, it might need to be unsqueezed to add the extra batch dimension
-- Deploying a model to a web app isn't that hard. Just create a Flask API.
